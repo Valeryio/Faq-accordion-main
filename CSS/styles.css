@@ -5,21 +5,18 @@
 body
 {
   height: fit-content;
-  padding: 2rem;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
 
   font-family: var(--ff-normal);
 
+  background-image: url('../assets/images/background-pattern-desktop.svg');
+  background-color: var(--clr-bkg-purple);
+
   transition: all 0.5s ease-in;
 }
 
-.background
-{
-  top: 0;
-  z-index: -1;
-  position: absolute;
-}
 
 h2
 {
@@ -45,10 +42,10 @@ h3
   padding: 1.5rem;
   margin: 2rem 0;
 
-  border: 1px solid;
   border-radius: 1rem;
 
   background-color: white;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .accordion > *
@@ -61,6 +58,12 @@ h3
 {
   margin-bottom: 1rem;
   display: flex;
+  align-items: center;
+}
+
+.accordion__title svg
+{
+  margin-right: 1.5rem;
 }
 
 .accordion__answer
