@@ -52,14 +52,21 @@ h3
 
 .accordion__item
 {
+  height: 56px;
+  overflow: hidden;
+  transition: height .5s ease-in;
   border: 1px solid violet;
+}
+
+.accordion__item:is(:hover, :active)
+{
+  height: 12rem;
 }
 
 .accordion__title, .accordion__question
 {
   margin-bottom: 1rem;
   display: flex;
-  /* gap: 1rem; */
 
   border: 1px solid;
 }
@@ -69,6 +76,8 @@ h3
   position: relative;
   align-items: center;
   justify-content: space-between;
+
+  cursor: pointer;
 }
 
 .accordion__question::after
@@ -87,26 +96,6 @@ h3
 {
   background-image: url('../assets/images/icon-minus.svg'); 
 }
-
-.accordion__answer
-{
-  display: none;
-  border: 1px solid chartreuse;
-}
-
-
-.accordion__item:hover .accordion__answer,
-.accordion__item:active .accordion__answer
-{
-
-  display: block;
-}
-
-
-
-
-
-
 
 
 
