@@ -14,6 +14,13 @@ body
   transition: all 0.5s ease-in;
 }
 
+.background
+{
+  top: 0;
+  z-index: -1;
+  position: absolute;
+}
+
 h2
 {
   font-size: var(--fs-h2);
@@ -24,9 +31,17 @@ h3
   font-size: var(--fs-h3);
 }
 
+
+
+
+
+/*************************************************\
+*            The accordion UI component           *
+\*************************************************/
 .accordion
 {
-  width: 375px;
+  min-width: 192px;
+  max-width: 375px;
   padding: 1.5rem;
   margin: 2rem 0;
 
@@ -34,7 +49,6 @@ h3
   border-radius: 1rem;
 
   background-color: white;
-
 }
 
 .accordion > *
@@ -43,34 +57,20 @@ h3
   text-align: left;
 }
 
-.background
-{
-  top: 0;
-  z-index: -1;
-  position: absolute;
-}
-
-.accordion__item
-{
-  height: 56px;
-  overflow: hidden;
-  transition: height .5s ease-in;
-  border: 1px solid violet;
-}
-
-.accordion__item:is(:hover, :active)
-{
-  height: 12rem;
-}
-
 .accordion__title, .accordion__question
 {
   margin-bottom: 1rem;
   display: flex;
-
-  border: 1px solid;
 }
 
+.accordion__answer
+{
+  opacity: 0;
+}
+
+
+
+/*-----Accordion properties and changing states-----*/
 .accordion__question
 {
   position: relative;
@@ -86,7 +86,6 @@ h3
   content: "###";
   height: 32px;
   color: transparent;
-  border: 1px solid;
   position: relative;
   background-repeat: no-repeat;
   background-image: url('../assets/images/icon-plus.svg');
@@ -97,9 +96,30 @@ h3
   background-image: url('../assets/images/icon-minus.svg'); 
 }
 
+.accordion__item
+{
+  height: 4rem;
+  overflow: hidden;
+  transition: height .4s ease-in;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__item:is(:hover, :active)
+{
+  height: 14rem;
+}
+
+.accordion__item:is(:hover, :active) .accordion__answer
+{
+  opacity: 1;
+}
 
 
 
+
+/*************************************************\
+*                 Attribution footer              *
+\*************************************************/
 .attribution
 {
   left:   50%;
